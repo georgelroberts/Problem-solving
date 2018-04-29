@@ -4,7 +4,7 @@ Created on Sun Apr 29 17:08:17 2018
 
 @author: George
 
-Project Euler problem 15 https://projecteuler.net/problem=15
+Project Euler problem 16 https://projecteuler.net/problem=16
 
 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 
