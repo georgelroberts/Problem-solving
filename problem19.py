@@ -23,10 +23,14 @@ Approach: There are 14 different scenarios, based on the first day of
 
 """
 
+import numpy as np
 
 def main():
-    month_lens = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    pass
+    #  Use the key that day 0 = Monday, day 6 = Sunday.
+    normal_month_lens = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    leap_month_lens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    print("No. of days in a normal year: {}".format(np.sum(normal_month_lens)))
+    print("No. of days in a leap year: {}".format(np.sum(leap_month_lens)))
 
 
 if __name__ == '__main__':
