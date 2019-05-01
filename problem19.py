@@ -25,12 +25,33 @@ Approach: There are 14 different scenarios, based on the first day of
 
 import numpy as np
 
+class First_of_month_day_calculator(object):
+    def __init__(self):
+        #  Use the key that day 0 = Monday, day 6 = Sunday.
+        self.normal_lens = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        self.leap_lens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        print("No. of days in a normal year: {}".format(np.sum(self.normal_lens)))
+        print("No. of days in a leap year: {}".format(np.sum(self.leap_lens)))
+
+    def no_first_sundays(self, start_day=6, leap=False):
+        if leap:
+            month_lens = self.leap_lens
+        else:
+            month_lens = self.normal_lens
+
+        no_sundays_int = 0
+        day = start_day
+        for days in month_lens:
+            if start_day == 6:
+                no_sundays_int += 1
+            end_day = (start_day + (days - 1)) % 7
+            start_day = (end_day + 1) % 7
+        print("Total number of sundays: {}".format(no_sundays_int))
+
+
 def main():
-    #  Use the key that day 0 = Monday, day 6 = Sunday.
-    normal_month_lens = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    leap_month_lens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    print("No. of days in a normal year: {}".format(np.sum(normal_month_lens)))
-    print("No. of days in a leap year: {}".format(np.sum(leap_month_lens)))
+    calc = First_of_month_day_calculator()
+    calc.no_first_sundays()
 
 
 if __name__ == '__main__':
