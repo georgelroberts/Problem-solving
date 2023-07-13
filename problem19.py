@@ -30,18 +30,14 @@ class First_of_month_day_calculator(object):
         #  Use the key that day 0 = Monday, day 6 = Sunday.
         self.normal_lens = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         self.leap_lens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        print("No. of days in a normal year: {}".format(np.sum(self.normal_lens)))
-        print("No. of days in a leap year: {}".format(np.sum(self.leap_lens)))
+        print(f"No. of days in a normal year: {np.sum(self.normal_lens)}")
+        print(f"No. of days in a leap year: {np.sum(self.leap_lens)}")
 
     def no_first_sundays(self, start_day=6, leap=False):
         """ Given a start day and whether or not it's a leap year,
         return the number of sundays in that year and the start day
         of the following year"""
-        if leap:
-            month_lens = self.leap_lens
-        else:
-            month_lens = self.normal_lens
-
+        month_lens = self.leap_lens if leap else self.normal_lens
         no_sundays_int = 0
         day = start_day
         for days in month_lens:
@@ -73,7 +69,7 @@ def main():
         no_sundays, start_day = calc.no_first_sundays(start_day=start_day, leap=leap)
         if year > 1900:
             tot_no_sundays += no_sundays
-    print("Total number of Sundays on first of months = {}".format(tot_no_sundays))
+    print(f"Total number of Sundays on first of months = {tot_no_sundays}")
 
 
 if __name__ == '__main__':

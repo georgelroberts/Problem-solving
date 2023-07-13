@@ -11,11 +11,8 @@ Project Euler problem 16 https://projecteuler.net/problem=16
 What is the sum of the digits of the number 2^1000?
 
 """
+
 power = 1000
 number = 2**power
-totSum = 0
-
-for i in str(number):
-    totSum += int(i)
-
-print("The sum of all digits in 2^{} is {}".format(power, totSum))
+totSum = sum(int(i) for i in str(number))
+print(f"The sum of all digits in 2^{power} is {totSum}")

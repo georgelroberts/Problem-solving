@@ -24,13 +24,10 @@ def maxUnderArray(array1, array2):
     array of length len(array1) that is the maximum sum of each element in
     array1 with the 2 elements underneath it in array2."""
 
-    newArray = []
-
-    for el in range(len(array1)):
-        newArray.append(max(array1[el] + array2[el],
-                            array1[el] + array2[el + 1]))
-
-    return newArray
+    return [
+        max(array1[el] + array2[el], array1[el] + array2[el + 1])
+        for el in range(len(array1))
+    ]
 
 
 # Array 1 is on top of array 2. To start, calculate the max sum of row 14 with
