@@ -49,9 +49,7 @@ def diagProdsMax(array, index):
     subArrayAntiDiag = np.diag(np.fliplr(subArray))
     subAntiDiagProd = np.prod(subArrayAntiDiag)
 
-    maxProd = max([subProd, subAntiDiagProd])
-
-    return maxProd
+    return max([subProd, subAntiDiagProd])
 
 
 def maxSurroundingProducts(array, index):
@@ -69,4 +67,4 @@ for i in range(17):
             maxProd = currentProd
             print(maxProd)
 
-print("The final maximum product is {}".format(int(maxProd)))
+print(f"The final maximum product is {int(maxProd)}")

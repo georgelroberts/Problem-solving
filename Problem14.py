@@ -22,10 +22,7 @@ from  collections import defaultdict
 def nextStep(seqNo):
     """ Finds the next number based on the current number. Returns a tuple with
     the next number, and the number of steps taken"""
-    if seqNo % 2 == 0:
-        return seqNo // 2
-    else:
-        return 3 * seqNo + 1
+    return seqNo // 2 if seqNo % 2 == 0 else 3 * seqNo + 1
 
 
 maxCollatzLength = 0

@@ -79,8 +79,5 @@ def noLettersInNumber(n, noLetters):
     return totNoLetters
 
 
-totNoLetters = 0
-for i in range(1, 1001):
-    totNoLetters += noLettersInNumber(i, noLetters)
-
-print("The number of all letters between 1 and 1000 is {}".format(totNoLetters))
+totNoLetters = sum(noLettersInNumber(i, noLetters) for i in range(1, 1001))
+print(f"The number of all letters between 1 and 1000 is {totNoLetters}")
